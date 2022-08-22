@@ -8,7 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/baker")
+@RequestMapping("/bakers")
 public class BakerController {
     private BakerService service;
     @Autowired
