@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("/muffin")
 public class MuffinController {
     private MuffinService service;
 
@@ -27,12 +28,12 @@ public class MuffinController {
     public ResponseEntity<Muffin> create(@RequestBody Muffin baker) {
         return new ResponseEntity<>(service.create(baker), HttpStatus.CREATED);
     }
-    @PutMapping
-    public ResponseEntity<Muffin> update(Long id, Muffin baker) {
+    @PutMapping("/update/{muffinId}")
+    public ResponseEntity<Muffin> update(@PathVariable("muffinId")Long id, Muffin baker) {
         return new ResponseEntity<>(service.update(id, baker), HttpStatus.OK);
     }
-
-    public ResponseEntity<Boolean> destroy(Long id) {
+    @DeleteMapping("/destroy/{muffinId")
+    public ResponseEntity<Boolean> destroy(@PathVariable("muffinId")Long id) {
         return new ResponseEntity<>(service.delete(id), HttpStatus.OK);
     }
 }
