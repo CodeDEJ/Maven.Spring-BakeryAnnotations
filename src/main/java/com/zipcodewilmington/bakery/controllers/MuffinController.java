@@ -28,11 +28,11 @@ public class MuffinController {
     public ResponseEntity<Muffin> create(@RequestBody Muffin baker) {
         return new ResponseEntity<>(service.create(baker), HttpStatus.CREATED);
     }
-    @PutMapping("/update/{muffinId}")
+    @PutMapping("{muffinId}")
     public ResponseEntity<Muffin> update(@PathVariable("muffinId")Long id, Muffin baker) {
         return new ResponseEntity<>(service.update(id, baker), HttpStatus.OK);
     }
-    @DeleteMapping("/destroy/{muffinId")
+    @DeleteMapping("{muffinId")
     public ResponseEntity<Boolean> destroy(@PathVariable("muffinId")Long id) {
         return new ResponseEntity<>(service.delete(id), HttpStatus.OK);
     }

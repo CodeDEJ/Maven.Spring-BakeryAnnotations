@@ -28,11 +28,11 @@ public class BakerController {
     public ResponseEntity<Baker> create(@RequestBody Baker baker) {
         return new ResponseEntity<>(service.create(baker), HttpStatus.CREATED);
     }
-    @PutMapping("/update/{bakerId}")
+    @PutMapping("{bakerId}")
     public ResponseEntity<Baker> update(@PathVariable("bakerId") Long id, Baker baker) {
         return new ResponseEntity<>(service.update(id, baker), HttpStatus.OK);
     }
-    @DeleteMapping("/destroy/{bakerId}")
+    @DeleteMapping("{bakerId}")
     public ResponseEntity<Boolean> destroy(@PathVariable("bakerId") Long id) {
         return new ResponseEntity<>(service.delete(id), HttpStatus.OK);
     }

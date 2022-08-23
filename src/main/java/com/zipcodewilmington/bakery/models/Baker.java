@@ -4,7 +4,6 @@ package com.zipcodewilmington.bakery.models;
 import javax.persistence.*;
 import java.util.Objects;
 @Entity
-@Table
 public class Baker {
     @Id
     @GeneratedValue(
